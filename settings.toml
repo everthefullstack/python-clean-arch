@@ -1,0 +1,10 @@
+[default]
+
+[testing]
+    DATABASE_URL = "sqlite://:memory:"
+
+[development]
+    DATABASE_URL = "sqlite:///database_development.db"
+
+[production]
+    DATABASE_URL = "sqlite:///database_production.db"
