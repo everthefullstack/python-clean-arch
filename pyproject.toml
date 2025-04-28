@@ -1,5 +1,5 @@
 [project]
-author= = "Giovane Lima"
+author= "Giovane Lima"
 name = "plataforma-de-pagamentos"
 version = "0.1.0"
 description = "Projeto Python criado para estudar Clean Architecture"
