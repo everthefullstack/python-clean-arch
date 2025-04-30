@@ -63,8 +63,8 @@ fastapi main.py
 
 ## Funcionalidades
 
-- Criar Cadastro (70% pronto)
-- Buscar Cadastro (Em construção)
+- Criar Cadastro (90% pronto)
+- Buscar Cadastro (90% pronto)
 - Fazer Transferência (Em construção)
 
 **O projeto utiliza o Swagger como documentação/testes, logo, para testar a aplicação, acesse: http://127.0.0.1:8000/swagger**
