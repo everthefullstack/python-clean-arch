@@ -67,7 +67,7 @@ fastapi main.py
 - Buscar Cadastro (90% pronto)
 - Fazer Transferência (Em construção)
 
-**O projeto utiliza o Swagger como documentação/testes, logo, para testar a aplicação, acesse: http://127.0.0.1:8000/swagger**
+**O projeto utiliza o Swagger como documentação/testes, logo, para testar a aplicação, acesse: http://127.0.0.1:8000/docs**
 ## Referências
 
  - [Programador Lhama Clean Arch](https://github.com/programadorLhama/CleanArch)
