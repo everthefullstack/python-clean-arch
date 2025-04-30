@@ -9,7 +9,7 @@ class CarteiraAbc(ABC):
 
     id: Optional[int] = field(default=None)
     saldo: float = 0.0
-    carteira_id: Optional[int] = field(default=None)
+    cadastro_id: Optional[int] = field(default=None)
     
     @abstractmethod
     def tem_saldo(self, valor: float) -> bool:

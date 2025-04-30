@@ -7,6 +7,6 @@ from typing import Any
 class SessionInterface(ABC):
 
     @abstractmethod
-    def get_session(self) -> Any:
+    def get_session(self, commit: bool) -> Any:
         pass
     

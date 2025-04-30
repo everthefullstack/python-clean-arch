@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from app.domain.interfaces.carteira import CarteiraAbc
 
 

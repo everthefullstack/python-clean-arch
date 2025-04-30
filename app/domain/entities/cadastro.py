@@ -10,6 +10,9 @@ class Cadastro(CadastroAbc):
     carteira: CarteiraAbc | None = None
 
     def valida_documento(self) -> None:
+        if len(self.documento) not in [11, 14]:
+            raise ValueError("Documento inválido. Deve ter 11 ou 14 dígitos.")
+        
         if len(self.documento) == 11:
             self.tipo_cadastro = "u"
         
