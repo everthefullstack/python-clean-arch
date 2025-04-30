@@ -58,7 +58,7 @@ uv pip install -r pyproject.toml
 Rode o projeto
 
 ```bash
-fastapi main.py
+fastapi dev
 ```
 
 ## Funcionalidades
