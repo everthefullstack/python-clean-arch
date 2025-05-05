@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
-from typing import Any
+from sqlmodel import Session
 
 
 @dataclass(slots=True, kw_only=True)
 class SessionInterface(ABC):
 
     @abstractmethod
-    def get_session(self, commit: bool) -> Any:
+    def get_session(self) -> Session:
         pass
     

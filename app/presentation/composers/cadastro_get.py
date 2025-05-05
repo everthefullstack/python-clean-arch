@@ -12,9 +12,9 @@ class CadastroGetControllerComposer:
     @staticmethod
     def compose() -> CadastroGetController:
         
-        session: SessionManager = SessionManager(engine=engine)
-        repository: CadastroRepository = CadastroRepository()
-        use_case: CadastroGetUseCase = CadastroGetUseCase(cadastro_repository=repository)
-        controller: CadastroGetController = CadastroGetController(use_case=use_case, session=session)
+        session = SessionManager(engine=engine).get_session()
+        repository = CadastroRepository(session=session)
+        use_case = CadastroGetUseCase(cadastro_repository=repository)
+        controller = CadastroGetController(use_case=use_case)
 
         return controller

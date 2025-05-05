@@ -9,9 +9,10 @@ from app.presentation.adapters.carteira import entity_to_model, model_to_entity
 @dataclass(slots=True, kw_only=True)
 class CarteiraRepository(CarteiraRepositoryInterface):
 
-    def insert_carteira(self, carteira: Carteira, session: Session) -> CarteiraModel:
+    session: Session | None = None
+
+    def insert_carteira(self, carteira: Carteira) -> CarteiraModel:
         carteira_model: CarteiraModel = entity_to_model(carteira)
-        session.add(carteira_model)
-        session.flush()
-        session.refresh(carteira_model)
+        self.session.add(carteira_model)
+        self.session.flush()
         return model_to_entity(carteira_model)
