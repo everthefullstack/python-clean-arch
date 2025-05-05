@@ -63,8 +63,8 @@ fastapi dev
 
 ## Funcionalidades
 
-- Criar Cadastro (90% pronto)
-- Buscar Cadastro (90% pronto)
+- Criar Cadastro (100%)
+- Buscar Cadastro (100%)
 - Fazer Transferência (Em construção)
 
 **O projeto utiliza o Swagger como documentação/testes, logo, para testar a aplicação, acesse: http://127.0.0.1:8000/docs**
