@@ -10,5 +10,4 @@ def create_app():
     app: FastAPI = FastAPI()
     app.include_router(cadastro_routes)
     
-
     return app

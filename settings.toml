@@ -1,10 +1,13 @@
 [default]
 
 [testing]
+    APP_NAME = "meios de pagamento"
     DATABASE_URL = "sqlite://:memory:"
 
 [development]
+    APP_NAME = "meios de pagamento"
     DATABASE_URL = "sqlite:///database_development.db"
 
 [production]
+    APP_NAME = "meios de pagamento"
     DATABASE_URL = "sqlite:///database_production.db"
