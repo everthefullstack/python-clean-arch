@@ -4,6 +4,7 @@ from app.domain.entities.http_request import HttpRequest
 from app.domain.entities.http_response import HttpResponse
 from app.domain.entities.cadastro import Cadastro
 from app.domain.entities.carteira import Carteira
+from app.infra.logger.logger import logger as lg
 
 
 @dataclass(slots=True)
@@ -12,6 +13,7 @@ class CadastroCarteiraCreateController:
     cadastro_carteira_create_use_case: CadastroCarteiraCreateUseCaseInterface
 
     def cadastro_carteira_create(self, http_request: HttpRequest) -> HttpResponse:
+        lg.info("Executando a função cadastro_carteira_create do CadastroCarteiraCreateController")
         
         cadastro = Cadastro(nome=http_request.body.get("nome"),
                             documento=http_request.body.get("documento"),

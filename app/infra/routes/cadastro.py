@@ -3,12 +3,14 @@ from app.presentation.adapters.request import request_to_entity
 from app.presentation.composers.cadastro_carteira_create import CadastroCarteiraCreateControllerComposer
 from app.presentation.composers.cadastro_get import CadastroGetControllerComposer
 from app.infra.schemas.cadastro import CadastroCarteiraSchemaRequest, CadastroGetSchemaRequest
+from app.infra.logger.logger import logger as lg
 
 
 cadastro_routes = APIRouter(tags=["Cadastro"], prefix="/cadastro")
 
 @cadastro_routes.post("/")
 async def cadastro_carteira_create(request: Request, req: CadastroCarteiraSchemaRequest):
+    lg.info("Executando a função cadastro_carteira_create do cadastro_routes")
 
     http_response = None
 
@@ -24,6 +26,7 @@ async def cadastro_carteira_create(request: Request, req: CadastroCarteiraSchema
 
 @cadastro_routes.get("/")
 async def cadastro_get(request: Request, req: CadastroGetSchemaRequest = Depends()):
+    lg.info("Executando a função cadastro_get do cadastro_routes")
     
     http_response = None
 

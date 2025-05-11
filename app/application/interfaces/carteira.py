@@ -9,3 +9,7 @@ class CarteiraRepositoryInterface(ABC):
     @abstractmethod
     def insert_carteira(self, carteira: Carteira) -> Carteira:
         pass
+    
+    @abstractmethod
+    def update_saldo(self, carteira: Carteira) -> Carteira:
+        pass

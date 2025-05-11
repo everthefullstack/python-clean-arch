@@ -1,9 +1,9 @@
-import logging as lg
 from dataclasses import dataclass, field
 from dynaconf import Dynaconf
 from typing import List
 from app.infra.interfaces.settings import SettingsInterface
 from app.infra.utils.singleton import singleton
+from app.infra.logger.logger import logger as lg
 
 
 @singleton
@@ -23,12 +23,13 @@ class SettingsManager(SettingsInterface):
             environments=self.__environments,
             load_dotenv=self.__load_dotenv,
         )
-        lg.info("Settings criada")
 
     def __post_init__(self) -> None:
         self.__create_settings()
 
     def get_settings(self) -> Dynaconf:
+        lg.info("Executando a função get_settings do SettingsManager")
+
         return self.__settings
 
 settings: SettingsManager = SettingsManager()

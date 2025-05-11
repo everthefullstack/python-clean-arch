@@ -6,6 +6,7 @@ from app.infra.repository.carteira import CarteiraRepository
 from app.application.use_cases.cadastro_carteira_create import CadastroCarteiraCreateUseCase
 from app.presentation.controllers.cadastro_carteira import CadastroCarteiraCreateController
 from app.infra.unit_of_work.cadastro_carteira_create import CadastroCarteiraCreateUnitOfWork
+from app.infra.logger.logger import logger as lg
 
 
 @dataclass(slots=True, frozen=True)
@@ -13,6 +14,7 @@ class CadastroCarteiraCreateControllerComposer:
 
     @staticmethod
     def compose() -> CadastroCarteiraCreateController:
+        lg.info("Executando a função compose do CadastroCarteiraCreateControllerComposer")
         
         session = SessionManager(engine=engine).get_session()
         cadastro_repository = CadastroRepository()

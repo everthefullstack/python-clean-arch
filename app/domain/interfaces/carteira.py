@@ -8,7 +8,7 @@ from typing import Optional
 class CarteiraAbc(ABC):
 
     id: Optional[int] = field(default=None)
-    saldo: float = 0.0
+    saldo: float = field(default=100.0)
     cadastro_id: Optional[int] = field(default=None)
     
     @abstractmethod
