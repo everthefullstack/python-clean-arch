@@ -19,6 +19,7 @@ class CadastroCarteiraCreateControllerComposer:
         session = SessionManager(engine=engine).get_session()
         cadastro_repository = CadastroRepository()
         carteira_repository = CarteiraRepository()
+        logger = lg
         cadastro_carteira_uow = (CadastroCarteiraCreateUnitOfWork(
             session=session,
             cadastro_repository=cadastro_repository,
@@ -26,7 +27,8 @@ class CadastroCarteiraCreateControllerComposer:
         )
         
         cadastro_carteira_use_case = CadastroCarteiraCreateUseCase(
-            cadastro_carteira_create_uow=cadastro_carteira_uow
+            cadastro_carteira_create_uow=cadastro_carteira_uow,
+            cadastro_carteira_logger=logger
         )
         controller = CadastroCarteiraCreateController(
             cadastro_carteira_create_use_case=cadastro_carteira_use_case

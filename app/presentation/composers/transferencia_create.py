@@ -25,7 +25,7 @@ class TransferenciaCreateControllerComposer:
         transferencia_repository = TransferenciaRepository()
         transferencia_val_ext = TransferenciaValExtService()
         transferencia_not_ext = TransferenciaNotExtService()
-
+        logger = lg
         transferencia_create_uow = (TransferenciaCreateUnitOfWork(
             session=session,
             cadastro_repository=cadastro_repository,
@@ -36,7 +36,8 @@ class TransferenciaCreateControllerComposer:
         transferencia_create_use_case = TransferenciaCreateUseCase(
             transferencia_create_uow=transferencia_create_uow,
             transferencia_val_ext=transferencia_val_ext,
-            transferencia_not_ext=transferencia_not_ext
+            transferencia_not_ext=transferencia_not_ext,
+            transferencia_logger=logger
         )
 
         controller = TransferenciaCreateController(

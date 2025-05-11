@@ -16,7 +16,9 @@ class CadastroGetControllerComposer:
         
         session = SessionManager(engine=engine).get_session()
         repository = CadastroRepository(session=session)
-        use_case = CadastroGetUseCase(cadastro_repository=repository)
+        logger = lg
+        use_case = CadastroGetUseCase(cadastro_repository=repository,
+                                      cadastro_logger=logger)
         controller = CadastroGetController(use_case=use_case)
 
         return controller
