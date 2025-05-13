@@ -1,12 +1,16 @@
 [project]
-author= "Giovane Lima"
-name = "plataforma-de-pagamentos"
-version = "0.1.0"
-description = "Projeto Python criado para estudar Clean Architecture"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "dynaconf>=3.2.10",
-    "fastapi[standard]>=0.115.12",
-    "sqlmodel>=0.0.24",
-]
+    author= "Giovane Lima"
+    name = "plataforma-de-pagamentos"
+    version = "0.1.0"
+    description = "Projeto Python criado para estudar Clean Architecture"
+    readme = "README.md"
+    requires-python = ">=3.13"
+    dependencies = [
+        "dynaconf>=3.2.10",
+        "fastapi[standard]>=0.115.12",
+        "pytest-asyncio>=0.26.0",
+        "pytest>=8.3.5",
+        "sqlmodel>=0.0.24",
+    ]
+[tool.pytest.ini_options]
+    asyncio_default_fixture_loop_scope = "function"

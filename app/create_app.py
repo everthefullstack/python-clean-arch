@@ -14,3 +14,12 @@ def create_app():
     create_database()
     
     return app
+
+def create_minimal_app():
+    lg.info("Executando a função create_minimal_app")
+    
+    app: FastAPI = FastAPI()
+    app.include_router(cadastro_routes)
+    app.include_router(transferencia_routes)
+    
+    return app

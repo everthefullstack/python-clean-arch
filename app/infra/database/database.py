@@ -12,6 +12,11 @@ class DatabaseManager(DatabaseInterface):
     engine: EngineInterface
 
     def create_database(self) -> None:
-        lg.info("Executando a função create_database do DatabaseManager")
+        try:
+            lg.info("Executando a função create_database do DatabaseManager")
+            SQLModel.metadata.create_all(self.engine.get_engine())
         
-        SQLModel.metadata.create_all(self.engine.get_engine())
+        except Exception as e:
+            lg.error(f"Erro ao criar o banco de dados: {e}")
+            raise e
+        

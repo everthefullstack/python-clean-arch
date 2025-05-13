@@ -7,7 +7,7 @@ from app.infra.logger.logger import logger as lg
 
 transferencia_routes = APIRouter(tags=["Transferencia"], prefix="/transferencia")
 
-@transferencia_routes.post("/")
+@transferencia_routes.post("/", status_code=201)
 async def transferencia_create(request: Request, req: TransferenciaSchemaRequest):
     lg.info("Executando a função transferencia_create do transferencia_routes")
     

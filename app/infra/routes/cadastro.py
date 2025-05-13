@@ -8,7 +8,7 @@ from app.infra.logger.logger import logger as lg
 
 cadastro_routes = APIRouter(tags=["Cadastro"], prefix="/cadastro")
 
-@cadastro_routes.post("/")
+@cadastro_routes.post("/", status_code=201)   
 async def cadastro_carteira_create(request: Request, req: CadastroCarteiraSchemaRequest):
     lg.info("Executando a função cadastro_carteira_create do cadastro_routes")
 
@@ -24,7 +24,7 @@ async def cadastro_carteira_create(request: Request, req: CadastroCarteiraSchema
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@cadastro_routes.get("/")
+@cadastro_routes.get("/", status_code=200)
 async def cadastro_get(request: Request, req: CadastroGetSchemaRequest = Depends()):
     lg.info("Executando a função cadastro_get do cadastro_routes")
     
